@@ -28,7 +28,8 @@ namespace WebAPIProjectDotNetCore
                 c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Conatact API", Description = "Contact Swagger" });
                 var xmlPath = System.AppDomain.CurrentDomain.BaseDirectory + @"WebAPIProjectDotNetCore.xml";
                 c.IncludeXmlComments(xmlPath);
-                });
+              
+            });
 
         }
 
@@ -44,6 +45,8 @@ namespace WebAPIProjectDotNetCore
             app.UseSwagger();
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Conatact API");
+               var cssPath = @"E:\StudyMaterial\RND\WebAPIProjectDotNetCore\WebAPIProjectDotNetCore\Content\theme-monokai.css";
+                c.InjectStylesheet("/content/theme-monokai.css");
             });
         }
     }
